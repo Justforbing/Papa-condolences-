@@ -134,15 +134,21 @@
     </audio>
 
     <script>
-        // Play Om audio on page load
+        // Play Om audio on page load if the browser allows
         window.onload = function() {
-            document.getElementById('omAudio').play();
+            var omAudio = document.getElementById('omAudio');
+            omAudio.play().catch(function(error) {
+                console.error("Om audio playback failed: ", error);
+            });
         }
 
         function lightDiya() {
             document.querySelector('.flame').style.opacity = '1';
             // Play Ram audio when diya is lit
-            document.getElementById('ramAudio').play();
+            var ramAudio = document.getElementById('ramAudio');
+            ramAudio.play().catch(function(error) {
+                console.error("Ram audio playback failed: ", error);
+            });
         }
     </script>
 </body>
