@@ -108,7 +108,7 @@
     <div class="container">
         <h1>મારા પિતાની યાદમાં</h1>
         <div class="photo">
-            <img <img src="https://raw.githubusercontent.com/Justforbing/Papa-condolences-/0c1bb383877ed23c0a5608d2f3226123ad63821f/IMG_20240715_004234.jpg" alt="પિતાનો ફોટો">
+            <img src="https://raw.githubusercontent.com/Justforbing/Papa-condolences-/0c1bb383877ed23c0a5608d2f3226123ad63821f/IMG_20240715_004234.jpg" alt="પિતાનો ફોટો">
         </div>
         <div class="name">સ્વ. જનકભાઈ ત્રિભોવનદાસ રામાવત</div>
         <p>તેમને શ્રધ્ધાંજલી આપવા દિવાસળી ને સ્પર્શ કરો</p>
@@ -122,9 +122,27 @@
         </div>
     </div>
 
+    <!-- Add audio elements -->
+    <audio id="omAudio" loop>
+        <source src="path_to_your_om_audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <audio id="ramAudio">
+        <source src="path_to_your_ram_audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
+        // Play Om audio on page load
+        window.onload = function() {
+            document.getElementById('omAudio').play();
+        }
+
         function lightDiya() {
             document.querySelector('.flame').style.opacity = '1';
+            // Play Ram audio when diya is lit
+            document.getElementById('ramAudio').play();
         }
     </script>
 </body>
