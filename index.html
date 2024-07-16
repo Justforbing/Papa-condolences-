@@ -102,6 +102,17 @@
             font-size: 40px;
             color: #4CAF50;
         }
+        .play-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -120,6 +131,7 @@
             <div class="arrow"></div>
             <div class="matchstick" onclick="lightDiya()"></div>
         </div>
+        <button class="play-button" onclick="playOmAudio()">Play Om Audio</button>
     </div>
 
     <!-- Add audio elements -->
@@ -134,8 +146,7 @@
     </audio>
 
     <script>
-        // Play Om audio on page load if the browser allows
-        window.onload = function() {
+        function playOmAudio() {
             var omAudio = document.getElementById('omAudio');
             omAudio.play().catch(function(error) {
                 console.error("Om audio playback failed: ", error);
